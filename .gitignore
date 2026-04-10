@@ -1,0 +1,108 @@
+# =============================================================================
+# .gitignore — Xilinx Vivado (Crossy-Road NexysDDR FPGA project)
+# -----------------------------------------------------------------------------
+# Track only version-controllable inputs: HDL sources (.v/.sv/.vhd), constraint
+# files (.xdc), IP configuration (.xci), block designs (.bd), memory init files
+# (.mem/.coe), documentation, and the top-level Vivado project file (.xpr).
+# Everything else is build output that Vivado regenerates from these inputs.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Vivado project-scoped build / scratch directories
+# Fully regenerable from the .xpr + source + IP .xci files.
+# -----------------------------------------------------------------------------
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+.Xil/
+*.Xil/
+
+# -----------------------------------------------------------------------------
+# Block-design and IP outputs inside the .srcs tree — keep only .xci / .bd
+# -----------------------------------------------------------------------------
+*.srcs/sources_1/bd/*/hdl/
+*.srcs/sources_1/bd/*/ip/
+*.srcs/sources_1/bd/*/synth/
+*.srcs/sources_1/bd/*/sim/
+*.srcs/sources_1/bd/*/ipshared/
+*.srcs/sources_1/imports/
+
+# Generated files for each IP — keep only the human-edited .xci
+*.srcs/sources_1/ip/*/*.v
+*.srcs/sources_1/ip/*/*.vhd
+*.srcs/sources_1/ip/*/*.vhdl
+*.srcs/sources_1/ip/*/*.veo
+*.srcs/sources_1/ip/*/*.vho
+*.srcs/sources_1/ip/*/*.dcp
+*.srcs/sources_1/ip/*/*.xml
+*.srcs/sources_1/ip/*/*_sim_netlist.*
+*.srcs/sources_1/ip/*/*_stub.*
+*.srcs/sources_1/ip/*/doc/
+*.srcs/sources_1/ip/*/sim/
+*.srcs/sources_1/ip/*/synth/
+*.srcs/sources_1/ip/*/hdl/
+
+# -----------------------------------------------------------------------------
+# Vivado journal, log, report and backup files
+# -----------------------------------------------------------------------------
+*.jou
+*.log
+*.str
+*.pb
+*.rpt
+*.wdb
+*.wcfg
+*.dcp
+*.bit
+*.ltx
+*.xsa
+*.bak
+*.backup
+vivado*.backup.*
+vivado_pid*.str
+vivado_pid*.debug
+vivado_pid*.zip
+usage_statistics_webtalk.*
+webtalk*.log
+hs_err_pid*.log
+
+# -----------------------------------------------------------------------------
+# Simulation outputs (xsim / ModelSim / Questa / Riviera / VCS / Xcelium)
+# -----------------------------------------------------------------------------
+xsim.dir/
+isim/
+modelsim/
+questa/
+riviera/
+xcelium/
+vcs/
+activehdl/
+*.vcd
+*.saif
+*.wlf
+transcript
+
+# -----------------------------------------------------------------------------
+# Vitis / Petalinux / SDK scratch (kept for forward-compatibility)
+# -----------------------------------------------------------------------------
+.sdk/
+.metadata/
+.settings/
+.cproject
+.project
+
+# -----------------------------------------------------------------------------
+# OS / editor cruft
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
